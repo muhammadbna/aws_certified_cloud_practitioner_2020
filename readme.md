@@ -24,6 +24,11 @@ AWS Certified Cloud Practitioner Training 2020 notes
   - [CloudFront](#cloudfront)
   - [Relational Database Service (RDS)](#relational-database-service-rds)
   - [Lambda](#lambda)
+- [EC2 pricing models](#ec2-pricing-models)
+  - [On-demand instances](#on-demand-instances)
+  - [Reserved Instances (RI)](#reserved-instances-ri)
+  - [Spot instances](#spot-instances)
+  - [Dedicated instances](#dedicated-instances)
 
 # Cloud concepts: What is cloud computing?
 
@@ -174,3 +179,42 @@ The practice of using a network of remote servers hosted on the Internet to stor
 ## Lambda
 
 - Run code without setting up or managing an application/server
+
+# EC2 pricing models
+
+## On-demand instances
+
+- No up-front payment and no long-term commitment
+- Charged by the hour or by the minute
+- Suitable for applications where the workload is short-term, spike-y or unpredictable. When you have a new app for development or you want to run experiments
+
+## Reserved Instances (RI)
+
+- For applications that have a steady-state, predictable usage, or require reserved capacity
+- Pricing is based on `Term x Class Offering x Payment Option`
+- Terms: Commit to a 1 year or 3 year contract. The longer the term the greater, the savings
+- Payment options: "All Upfront", "Partial Upfront" and "No Upfront". The greater upfront, the greater the savings
+- RIs can be shared between multiple accounts within an organizations
+- Unused RIs can be sold in the "Reserved Instance Marketplace"
+
+## Spot instances
+
+- AWS has unused compute capacity that they want to maximize the utility of their idle servers
+- Spot instances provide a discount of 90% compare to On-Demand pricing.
+- Spot instances can be terminated if the computing capacity is needed by on-demand customers
+- Designed for applications that have flexible start and end times or applications that are only feasible at very low compute costs
+- Termination considerations
+  - Instances can be terminated by AWS at anytime
+  - If your instance is terminated by AWS, you don't get charged for a partial hour of usage
+  - If you terminate an instance, you will be charge for any hour that it ran
+
+## Dedicated instances
+
+- Designed to meet regulatory requirements. When you have strict server-bound licensing that won't support multi-tenancy or cloud deployments
+- Enterprises and large organizations may have security concerns or obligations about against sharing the same hardware with other AWS customers
+- Multi-tenant
+  - When multiple customers are running workloads on the same hardware. **Virtual isolation** is what separate customers
+  - e.g. rent out room(s) in a house
+- Single tenant
+  - When a single customer has dedicated hardware. **Physical isolation** is what separate customers
+  - e.g. rent out a house
