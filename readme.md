@@ -12,6 +12,18 @@ AWS Certified Cloud Practitioner Training 2020 notes
   - [Availability zones (AZs)](#availability-zones-azs)
   - [Edge locations](#edge-locations)
   - [GovCloud Regions (only for US)](#govcloud-regions-only-for-us)
+- [Introduction to AWS tools](#introduction-to-aws-tools)
+  - [Budgets](#budgets)
+  - [Identity and Access Management (IAM)](#identity-and-access-management-iam)
+  - [Elastic Compute Cloud (EC2)](#elastic-compute-cloud-ec2)
+  - [Systems Manager Session Manager](#systems-manager-session-manager)
+  - [Amazon Machine Images (AMI)](#amazon-machine-images-ami)
+  - [Auto Scaling Groups](#auto-scaling-groups)
+  - [Elastic Load Balancer](#elastic-load-balancer)
+  - [Simple Storage Service (S3)](#simple-storage-service-s3)
+  - [CloudFront](#cloudfront)
+  - [Relational Database Service (RDS)](#relational-database-service-rds)
+  - [Lambda](#lambda)
 
 # Cloud concepts: What is cloud computing?
 
@@ -110,3 +122,55 @@ The practice of using a network of remote servers hosted on the Internet to stor
 - Only operated by employees who are US citizens on US soil
 - Only accessible to US entities and root account holders who pass a screening process
 - Customers can architect secure cloud solutions that comply with US regulations
+
+# Introduction to AWS tools
+
+## Budgets
+
+- Create custom budgets that alert you when you exceed (or are forecasted to exceed) the thresholds that you set
+
+## Identity and Access Management (IAM)
+
+- Control who is authenticated (signed in) and authorized (has permissions) to use resources
+- When creating an AWS account, you have complete access to all AWS services and resources in the account (i.e. root user). This root user should not be used for everyday tasks, even administrative ones. Only use the root user to create your first IAM user, and then securely lock away the root user credentials and use them to perform only a few account and service management tasks
+
+## Elastic Compute Cloud (EC2)
+
+- Essentially a server that is provisioned to run your application in
+
+## Systems Manager Session Manager
+
+- Provide an interface to access your EC2 servers through a browser-based shell on AWS platform or through the AWS Command Line Interface (CLI)
+- Provides secure and auditable instance management without opening inbound ports or managing SSH keys
+
+## Amazon Machine Images (AMI)
+
+- Create a "template" of your EC2 server so that it can be reused
+- Includes server and security configurations
+
+## Auto Scaling Groups
+
+- Handles availability of your EC2 server (ensure that 1 EC2 server is at least running)
+- Allow configuration to flexibly increase and decrease EC2 instances to match traffic demands
+
+## Elastic Load Balancer
+
+- Able to distribute traffic evenly to multiple EC2 instances
+- If an EC2 instance is unhealthy, the traffic will then be routed to a healthy EC2 instance
+
+## Simple Storage Service (S3)
+
+- Essentially Dropbox, or a Google Drive
+
+## CloudFront
+
+- Used as a Content Distribution Network (CDN). To allow users from around the world to access your content in your S3 quickly (low latency, and high transfer speeds)
+- The contents to be served will be distributed to servers across the world
+
+## Relational Database Service (RDS)
+
+- Able to provision different database products (e.g. MySQL, PostgreSQL) for your application
+
+## Lambda
+
+- Run code without setting up or managing an application/server
